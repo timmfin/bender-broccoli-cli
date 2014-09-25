@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var resolve = require('resolve');
+
+process.title = 'bender-broccoli';
+
+var benderBroccoliPath = resolve.sync('bender-broccoli', {
+  basedir: process.cwd()
+});
+
+var benderBroccoli = require(benderBroccoliPath);
+benderBroccoli.cli();
